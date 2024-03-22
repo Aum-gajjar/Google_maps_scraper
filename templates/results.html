@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <title>Web Scraper Results</title>
+    <style>
+        th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="text-center">
+            <h1 class="mb-4">Search Results</h1>
+        </div>
+        <div class="table-responsive">
+            {{ df | safe }}
+        </div>
+        <div class="mt-4 text-center">
+            <a href="{{ url_for('download_zip') }}" class="btn btn-primary">Download Zip</a>
+        </div>
+    </div>
+</body>
+</html>
